@@ -1,5 +1,3 @@
-#test
-
 # Calcul pi par une méthode stochastique (convergence très lente !)
 import time
 import numpy as np
