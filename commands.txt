@@ -1,0 +1,9 @@
+git status
+git checkout nome_da_branch
+git add /nome/do/arquivo
+git add .
+git reset /nome/do/arquivo
+git reset .
+git commit -m "Messagem do commit"
+git push
+git pull

@@ -6,6 +6,7 @@
 
 ## lscpu
 
+```
 Architecture:            x86_64
   CPU op-mode(s):        32-bit, 64-bit
   Address sizes:         48 bits physical, 48 bits virtual
@@ -20,13 +21,14 @@ Vendor ID:               AuthenticAMD
     Core(s) per socket:  4
     Socket(s):           1
     Stepping:            0
-    BogoMIPS:            5589.10
-    
+    BogoMIPS:            5589.10  
 Caches (sum of all):     
   L1d:                   128 KiB (4 instances)
   L1i:                   128 KiB (4 instances)
   L2:                    2 MiB (4 instances)
   L3:                    4 MiB (1 instance)
+```
+  
 
 
 *Des infos utiles s'y trouvent : nb core, taille de cache*
@@ -122,9 +124,9 @@ Efficacité matérielle : Certaines architectures matérielles peuvent bénéfic
 ---------------|---------|---------|-------------------------------------------------|
 A.nbCols       |  1      |   2590  |     1963.46    |     3294.21    |    1918.32    |
 512            |  8      |  10845  |     8798.29    |     9140.85    |    7827.58    |
----------------|---------|---------|-------------------------------------------------|
+               |         |         |                |                |               |
 Speed-up       |         |   4.18  |      4.48      |       2.77     |      4.08     |
----------------|---------|---------|-------------------------------------------------|
+               |         |         |                |                |               |
 
 Pour interpréter les résultats, il faut considérer l'efficacité avec laquelle chaque thread peut travailler sans interférence ou attente inutile, ainsi que l'aptitude du matériel à gérer le parallélisme. Des gains significatifs avec le produit par blocs suggèrent une meilleure exploitation des ressources parallèles et du cache, tandis que des résultats similaires ou inférieurs pourraient indiquer des goulots d'étranglement dans l'accès aux données ou une saturation des ressources disponibles.
 

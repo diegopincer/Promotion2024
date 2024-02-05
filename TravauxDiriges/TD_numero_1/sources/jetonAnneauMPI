@@ -1,0 +1,21 @@
+from mpi4py import MPI
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
+token = None
+
+if rank == 0:
+    token = 1
+    comm.send(token, dest=(rank + 1) % size)
+    token = comm.recv(source=size - 1)
+    print("Le processus ", rank, " a reçu le jeton ", token, " du processus ", size - 1)
+else:
+    token = comm.recv(source=(rank - 1) % size)
+    token += 1
+    comm.send(token, dest=(rank + 1) % size if rank < size - 1 else 0)
+
+if rank == 0:
+    print("Le jeton final est ", token)
+
+MPI.Finalize()
