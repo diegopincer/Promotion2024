@@ -1,0 +1,41 @@
+from mpi4py import MPI
+import random
+import time
+
+# Initialiser le communicateur MPI
+comm = MPI.COMM_WORLD
+rang = comm.Get_rank()
+taille = comm.Get_size()
+
+# Nombre total de points à générer pour l'estimation de Monte Carlo
+n_points = 1000000
+points_par_processus = n_points // taille
+
+# Compteur de points à l'intérieur du cercle pour chaque processus
+compte_dans_cercle = 0
+
+# Mesurer le temps de début
+if rang == 0:
+    debut = time.time()
+
+# Générer des points aléatoires et compter combien tombent à l'intérieur du cercle unitaire
+for _ in range(points_par_processus):
+    x, y = random.uniform(-1, 1), random.uniform(-1, 1)
+    if x**2 + y**2 <= 1:
+        compte_dans_cercle += 1
+
+# Agréger les résultats de tous les processus
+total_dans_cercle = comm.reduce(compte_dans_cercle, op=MPI.SUM, root=0)
+
+# Le processus maître calcule et imprime l'estimation de π
+if rang == 0:
+    fin = time.time()
+    estimation_pi = 4 * total_dans_cercle / n_points
+    print(f"L'estimation de π en utilisant MPI et la méthode de Monte Carlo est : {estimation_pi}")
+    print(f"Temps pour calculer π : {fin - debut} secondes")
+
+# Terminer MPI
+MPI.Finalize()
+
+#L'estimation de π en utilisant MPI et la méthode de Monte Carlo est : 3.139432
+#Temps pour calculer π : 0.7008876800537109 secondes

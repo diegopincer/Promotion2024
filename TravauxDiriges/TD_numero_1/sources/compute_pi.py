@@ -19,3 +19,6 @@ end = time.time()
 
 print(f"Temps pour calculer pi : {end - beg} secondes")
 print(f"Pi vaut environ {approx_pi}")
+
+#Temps pour calculer pi : 1.5851998329162598 secondes
+#Pi vaut environ 3.1416368

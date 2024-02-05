@@ -119,14 +119,12 @@ Efficacité matérielle : Certaines architectures matérielles peuvent bénéfic
 ### Bloc + OMP
 
 
-
   szBlock      | OMP_NUM | MFlops  | MFlops(n=2048) | MFlops(n=512)  | MFlops(n=4096)|
 ---------------|---------|---------|-------------------------------------------------|
 A.nbCols       |  1      |   2590  |     1963.46    |     3294.21    |    1918.32    |
 512            |  8      |  10845  |     8798.29    |     9140.85    |    7827.58    |
-               |         |         |                |                |               |
 Speed-up       |         |   4.18  |      4.48      |       2.77     |      4.08     |
-               |         |         |                |                |               |
+
 
 Pour interpréter les résultats, il faut considérer l'efficacité avec laquelle chaque thread peut travailler sans interférence ou attente inutile, ainsi que l'aptitude du matériel à gérer le parallélisme. Des gains significatifs avec le produit par blocs suggèrent une meilleure exploitation des ressources parallèles et du cache, tandis que des résultats similaires ou inférieurs pourraient indiquer des goulots d'étranglement dans l'accès aux données ou une saturation des ressources disponibles.
 
