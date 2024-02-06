@@ -45,4 +45,8 @@ $$
   n  = 31
 $$
 
-## Ensemble de mandelbrot
+## 1.3 Ensemble de mandelbrot
+
+1. 
+
+2.

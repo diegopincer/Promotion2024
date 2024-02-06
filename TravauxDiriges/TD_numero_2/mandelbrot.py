@@ -53,7 +53,10 @@ width, height = 1024, 1024
 
 scaleX = 3./width
 scaleY = 2.25/height
+
+
 convergence = np.empty((width, height), dtype=np.double)
+
 # Calcul de l'ensemble de mandelbrot :
 deb = time()
 for y in range(height):
