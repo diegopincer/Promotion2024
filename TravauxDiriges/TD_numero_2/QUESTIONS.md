@@ -47,6 +47,32 @@ $$
 
 ## 1.3 Ensemble de mandelbrot
 
-1. 
+  Pour le code sans parélisation on a
 
-2.
+    Temps du calcul de l'ensemble de Mandelbrot : 6.729634761810303
+
+    Temps de constitution de l'image : 0.08461761474609375
+
+### 1.3.1 Partition équitable par ligne
+### 1.3.2 Le stratégie maître–esclave
+
+
+## 1.4 Produit matrice–vecteur
+
+    Temps utilisé sans parélisation: 0.009897232055664062 secondes
+
+### 1.4.1 Produit parallèle matrice – vecteur par colonne
+
+    Temps utilisé avec parélisation par colum (1 processus): 0.0037217140197753906 secondes
+
+    Temps utilisé avec parélisation par colum (2 processus): 0.0012526512145996094 secondes
+
+    Temps utilisé avec parélisation par colum (4 processus): 0.0009002685546875012 secondes
+
+### 1.4.2 Produit parallèle matrice – vecteur par ligne
+
+    Temps utilisé avec parélisation par ligne (1 processus): 0.0011188983917236328 secondes
+
+    Temps utilisé avec parélisation par ligne (2 processus): 3.242492675781250e-05 secondes 
+
+    Temps utilisé avec parélisation par ligne (4 processus): 0.528594970703125e-05 secondes

@@ -1,5 +1,6 @@
 # Produit matrice-vecteur v = A.u
 import numpy as np
+import time
 
 # Dimension du problème (peut-être changé)
 dim = 120
@@ -12,5 +13,8 @@ u = np.array([i+1. for i in range(dim)])
 print(f"u = {u}")
 
 # Produit matrice-vecteur
+begin = time.time()
 v = A.dot(u)
+end = time.time()
 print(f"v = {v}")
+print(f"Temps utilisé: {end - begin} secondes")
